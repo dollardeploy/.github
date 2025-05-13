@@ -4,5 +4,8 @@ We are building the deployment platform, so developers, indie-makers and open-so
 
 [Visit the platform](https://dollardeploy.com/?utm_source=github)
 
-[See & contribute to the templates](https://github.com/dollardeploy/templates)
+[See & contribute to the open-source templates](https://github.com/dollardeploy/templates)
+
+[Documentation](https://docs.dollardeploy.com)
+
 
