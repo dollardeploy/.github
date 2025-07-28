@@ -1,0 +1,252 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Partial<NoUndefinedField<Pick<App,\"type\"|\"repositoryUrl\"|\"sourcePath\"|\"sourceBranch\"|\"startScript\"|\"startCmd\"|\"buildScript\"|\"buildCmd\"|\"installCmd\"|\"env\"|\"dockerComposeFile\"|\"preStartCmd\"|\"postStartCmd\"|\"buildIncludeFiles\"|\"allowAccessFrom\"|\"backupExcludeFiles\"|\"backupCmd\"|\"buildPath\"|\"mainPort\">>>": {
+            "properties": {
+                "allowAccessFrom": {
+                    "title": "allowAccessFrom",
+                    "type": "string"
+                },
+                "backupCmd": {
+                    "title": "backupCmd",
+                    "type": "string"
+                },
+                "backupExcludeFiles": {
+                    "title": "backupExcludeFiles",
+                    "type": "string"
+                },
+                "buildCmd": {
+                    "title": "buildCmd",
+                    "type": "string"
+                },
+                "buildIncludeFiles": {
+                    "title": "buildIncludeFiles",
+                    "type": "string"
+                },
+                "buildPath": {
+                    "title": "buildPath",
+                    "type": "string"
+                },
+                "buildScript": {
+                    "title": "buildScript",
+                    "type": "string"
+                },
+                "dockerComposeFile": {
+                    "title": "dockerComposeFile",
+                    "type": "string"
+                },
+                "env": {
+                    "$ref": "#/definitions/PrismaJson.PrismaAppEnv",
+                    "description": "[PrismaAppEnv]",
+                    "title": "env"
+                },
+                "installCmd": {
+                    "title": "installCmd",
+                    "type": "string"
+                },
+                "mainPort": {
+                    "title": "mainPort",
+                    "type": "number"
+                },
+                "postStartCmd": {
+                    "title": "postStartCmd",
+                    "type": "string"
+                },
+                "preStartCmd": {
+                    "title": "preStartCmd",
+                    "type": "string"
+                },
+                "repositoryUrl": {
+                    "title": "repositoryUrl",
+                    "type": "string"
+                },
+                "sourceBranch": {
+                    "title": "sourceBranch",
+                    "type": "string"
+                },
+                "sourcePath": {
+                    "title": "sourcePath",
+                    "type": "string"
+                },
+                "startCmd": {
+                    "title": "startCmd",
+                    "type": "string"
+                },
+                "startScript": {
+                    "title": "startScript",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "[PrismaAppType]",
+                    "enum": [
+                        "docker-compose",
+                        "java",
+                        "native",
+                        "next",
+                        "react",
+                        "react-static"
+                    ],
+                    "title": "type",
+                    "type": "string"
+                }
+            },
+            "title": "Partial<NoUndefinedField<Pick<App,\"type\"|\"repositoryUrl\"|\"sourcePath\"|\"sourceBranch\"|\"startScript\"|\"startCmd\"|\"buildScript\"|\"buildCmd\"|\"installCmd\"|\"env\"|\"dockerComposeFile\"|\"preStartCmd\"|\"postStartCmd\"|\"buildIncludeFiles\"|\"allowAccessFrom\"|\"backupExcludeFiles\"|\"backupCmd\"|\"buildPath\"|\"mainPort\">>>",
+            "type": "object"
+        },
+        "PrismaJson.PrismaAppEnv": {
+            "title": "PrismaJson.PrismaAppEnv",
+            "type": "object"
+        },
+        "ServiceType": {
+            "enum": [
+                "ddagent",
+                "docker",
+                "postgres",
+                "redis"
+            ],
+            "title": "ServiceType",
+            "type": "string"
+        },
+        "TemplateAppWithFiles": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Partial<NoUndefinedField<Pick<App,\"type\"|\"repositoryUrl\"|\"sourcePath\"|\"sourceBranch\"|\"startScript\"|\"startCmd\"|\"buildScript\"|\"buildCmd\"|\"installCmd\"|\"env\"|\"dockerComposeFile\"|\"preStartCmd\"|\"postStartCmd\"|\"buildIncludeFiles\"|\"allowAccessFrom\"|\"backupExcludeFiles\"|\"backupCmd\"|\"buildPath\"|\"mainPort\">>>"
+                },
+                {
+                    "properties": {
+                        "repositoryUrl": {
+                            "title": "repositoryUrl",
+                            "type": "string"
+                        },
+                        "type": {
+                            "title": "type",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "repositoryUrl",
+                        "type"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "properties": {
+                        "files": {
+                            "items": {
+                                "properties": {
+                                    "content": {
+                                        "title": "content",
+                                        "type": "string"
+                                    },
+                                    "path": {
+                                        "title": "path",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "path"
+                                ],
+                                "type": "object"
+                            },
+                            "title": "files",
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            ],
+            "title": "TemplateAppWithFiles"
+        }
+    },
+    "description": "This should be in sync with App schema in the database.\nAlso it is used to generate JSONSchema file for validation.",
+    "properties": {
+        "app": {
+            "$ref": "#/definitions/TemplateAppWithFiles",
+            "title": "app"
+        },
+        "deployTime": {
+            "title": "deployTime",
+            "type": "string"
+        },
+        "description": {
+            "title": "description",
+            "type": "string"
+        },
+        "experimental": {
+            "title": "experimental",
+            "type": "boolean"
+        },
+        "id": {
+            "title": "id",
+            "type": "string"
+        },
+        "intro": {
+            "title": "intro",
+            "type": "string"
+        },
+        "introVideoUrl": {
+            "title": "introVideoUrl",
+            "type": "string"
+        },
+        "logo": {
+            "title": "logo",
+            "type": "string"
+        },
+        "name": {
+            "title": "name",
+            "type": "string"
+        },
+        "postLaunchNote": {
+            "description": "Post launch note - some helpful tips on how to get started (Markdown)",
+            "title": "postLaunchNote",
+            "type": "string"
+        },
+        "provider": {
+            "title": "provider",
+            "type": "string"
+        },
+        "requirements": {
+            "properties": {
+                "cpu": {
+                    "title": "cpu",
+                    "type": "number"
+                },
+                "memory": {
+                    "title": "memory",
+                    "type": "number"
+                },
+                "storage": {
+                    "title": "storage",
+                    "type": "number"
+                }
+            },
+            "title": "requirements",
+            "type": "object"
+        },
+        "services": {
+            "items": {
+                "$ref": "#/definitions/ServiceType"
+            },
+            "title": "services",
+            "type": "array"
+        },
+        "source": {
+            "title": "source",
+            "type": "string"
+        },
+        "tags": {
+            "items": {
+                "type": "string"
+            },
+            "title": "tags",
+            "type": "array"
+        }
+    },
+    "required": [
+        "app",
+        "id",
+        "intro",
+        "name"
+    ],
+    "type": "object"
+}
