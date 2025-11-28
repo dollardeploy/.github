@@ -6,7 +6,7 @@ We are building the deployment platform, so startups, developers, indie-makers a
 
 [See & contribute to the open-source templates](https://github.com/dollardeploy/templates)
 
-[Run your own app with our boilerplates - NextJs, Go, Rust, Python, Java or PHP natively running on your server](https://github.com/orgs/dollardeploy/repositories)
+[Run your own app with our boilerplates - NextJs, Go, Rust, Python, Java or PHP natively running on your server](https://github.com/orgs/dollardeploy/repositories?q=template%3Atrue+archived%3Afalse)
 
 [Documentation](https://docs.dollardeploy.com)
 
